@@ -8,8 +8,8 @@ import cron from 'node-cron';
 
 
 const s3 = new AWS.S3({
-    accessKeyId: 'AKIAQPM52WHE7MFYMIX7',
-    secretAccessKey: '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',
+    accessKeyId: 'AKIA2UCA4ERU5F4PXB4G',
+    secretAccessKey: '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',
     region: "ap-south-1",
     s3BucketEndpoint: true,
     endpoint: "https://converterimg.s3.ap-south-1.amazonaws.com/"
@@ -21,7 +21,7 @@ const uploadImagePhoto = async (req, fileName, key) => {
        Key: fileName,
        Body: req.files[key].data,
        ContentType: req.files[key].mimetype,
-       ACL: 'public-read'
+       
     }).promise()
     return response.then(async data => {
        return { status: true, data }
@@ -57,7 +57,7 @@ const uploadImagePhoto = async (req, fileName, key) => {
        Key: pdfPath,
        Body:jpgBuffer,
       //  ContentType: req.files[key].mimetype,
-       ACL: 'public-read'
+       
     }).promise()
     return response.then(async data => {
        return { status: true, data }
