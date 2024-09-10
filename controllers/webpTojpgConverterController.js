@@ -8,11 +8,11 @@ import cron from 'node-cron';
 
 
 const s3 = new AWS.S3({
-    accessKeyId: 'AKIA2UCA4ERU5F4PXB4G',
-    secretAccessKey: '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',
+    accessKeyId: '',
+    secretAccessKey: ',
     region: "ap-south-1",
     s3BucketEndpoint: true,
-    endpoint: "https://converterimg.s3.ap-south-1.amazonaws.com/"
+    endpoint: ""
  })
 
 const uploadImagePhoto = async (req, fileName, key) => {
